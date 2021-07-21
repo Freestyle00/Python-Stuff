@@ -19,11 +19,11 @@ def wincheck(PL, PC):
 	"""
 	if PL == PC:
 		return "draw"
-	elif (PL == ROCK and PC == PAPER) or (PL == PAPER and PC == SCISSORS) or (PL == SCISSORS and PC == ROCK):
+	elif (PL == ROCK and PC == PAPER) or (PL == PAPER and PC == SCISSORS) or (PL == SCISSORS and PC == ROCK): #In here it is checked if the player lost
 		return False
-	elif (PC == ROCK and PL == PAPER) or (PC == PAPER and PL == SCISSORS) or (PC == SCISSORS and PL == ROCK):
+	elif (PC == ROCK and PL == PAPER) or (PC == PAPER and PL == SCISSORS) or (PC == SCISSORS and PL == ROCK): #and in here we check if the player won
 		return True
-	else:
+	else: #
 		raise Exception(f"Something has gone wrong please check the if statments \nPlayerInput\"{PL}\" \n PCInput\"{PC}\"") 
 		#I am scared that my if statements are wrong
 		#so that it will instead run ahead it will
@@ -32,6 +32,10 @@ def wincheck(PL, PC):
 
 		#who came up with 50 chars per comment
 def HumanReadable(PC):
+	"""
+	In here the r, p and s are converted
+	into more understandable words
+	"""
 	if PC == ROCK:
 		return "Rock"
 	elif PC == PAPER:
@@ -47,7 +51,8 @@ while Again == True:
 	Again = False
 	WrongMessage = PlayerI
 	try:
-		PlayerI = PlayerI[0].lower()
+		PlayerI = PlayerI[0].lower() #in here we will take the first char
+					     #of the players input and lower it
 		PlayerF = False #dont you love it when you type Flase instead of False
 	except IndexError:
 		print("You know you have input something instead of just pressing enter")
@@ -65,7 +70,10 @@ while Again == True:
 			print("You won")
 		else:
 			print("???")
-			raise Exception("???")
+			raise Exception("???") #I once had something like this happen
+					       #I dont knwo how this happened but if
+					       #it happens again then i will know
+					       #that it happened
 		print("\n\nDo you want to try again (Y/N)")
 		Answer = input()[0].lower()
 		if Answer == "y":
@@ -76,5 +84,6 @@ while Again == True:
 			print("Your answer is no valid answer")
 			print("Exiting....")
 	else:
-		print(f"Please input Rock, Paper or Scissors instead of \"{WrongMessage}\"")
+		print(f"Please input Rock, Paper or Scissors instead of \"{WrongMessage}\"") #The player should know that he did 
+											     #something wrong
 		Again == True
