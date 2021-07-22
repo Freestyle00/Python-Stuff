@@ -8,10 +8,11 @@ class FractionConverter():
 
         Fractions can only be in this format 1/4 and should be given as a string
         """
+        #TODO Add that you can also do 1 1/4 which is 1.25 
         SplittedList = fraction.split("/")
-        #TODO finish this function and class
-
-        return SplittedList
+        convertleft = int(SplittedList[0])
+        convertright = int(SplittedList[1])
+        return convertleft / convertright
 
 name = FractionConverter()
 
