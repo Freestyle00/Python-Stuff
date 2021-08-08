@@ -7,7 +7,7 @@ class TestRockPaperScissors(unittest.TestCase):
 
     def test_wincheck(self):
         ergebnis=1/3
-        self.assertTrue(0.3333332 < ergebnis < 0.3333334)
+        self.assertAlmostEqual(ergebnis, 0.333333) #I just found AlmostEqual it perfekt for such cases
         self.assertEqual(wincheck(ROCK, ROCK), "draw")
         self.assertEqual(wincheck(ROCK, PAPER), False)
         self.assertEqual(wincheck(ROCK, SCISSORS), True)
